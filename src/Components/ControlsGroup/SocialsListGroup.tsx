@@ -4,7 +4,7 @@ import SocialList from "../SocialList/SocialList";
 import SocialItem from "../SocialList/SocialItem";
 
 interface IProps {
-  socials: Array<{ id: string; icon: React.ReactNode; socialName: string }>;
+  socials: Array<{ id: string, icon: React.ReactNode, socialName: string }>;
 }
 
 const SocialListGroup = (props: IProps) => {

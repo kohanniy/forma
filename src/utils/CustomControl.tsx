@@ -18,7 +18,7 @@ export interface IFormProps {
   description?: string;
   uploadBtnText?: string;
   inputType?: string;
-  socials?: Array<{ id: string; icon: React.ReactNode; socialName: string }>;
+  socials?: Array<{ id: string, icon: React.ReactNode, socialName: string }>;
 }
 
 const CustomControl: React.FC<IFormProps> = (props) => {
