@@ -1,2 +1,6 @@
-# forma
-Created with CodeSandbox
+# Форма личного кабинета
+Используемые технологии:
+- React
+- TypeScript
+- Material UI
+- Styled Components
