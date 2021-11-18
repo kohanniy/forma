@@ -1,11 +1,7 @@
-import styled from "styled-components";
-import TextField from "@material-ui/core/TextField";
+import styled from 'styled-components';
+import TextField from '@material-ui/core/TextField';
 
-const FormTextarea = styled(({ ...props }) => (
-  <TextField {...props} multiline>
-    {props.children}
-  </TextField>
-))`
+const FormTextarea = styled((props) => <TextField multiline {...props} />)`
   &.MuiFormControl-root {
     box-sizing: border-box;
     min-height: 124px;

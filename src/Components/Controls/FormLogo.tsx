@@ -1,14 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import ControlContainer from "../Controls/ControlContainer";
-import FormDialog from "../FormDialog/FormDialog";
-import { DeleteLogoIcon } from "../Icons/Icons";
+import React from 'react';
+import styled from 'styled-components';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import ControlContainer from '../Controls/ControlContainer';
+import FormDialog from '../FormDialog/FormDialog';
+import { DeleteLogoIcon } from '../Icons/Icons';
 
-const Wrapper = styled(({ ...props }) => (
-  <ControlContainer {...props}>{props.children}</ControlContainer>
-))`
+const Wrapper = styled((props) => <ControlContainer {...props} />)`
   cursor: pointer;
 
   @media (hover: hover) {
@@ -19,7 +17,7 @@ const Wrapper = styled(({ ...props }) => (
   }
 `;
 
-const Logo = styled(({ ...props }) => <Avatar {...props} />)`
+const Logo = styled((props) => <Avatar {...props} />)`
   margin: 0;
 
   &.MuiAvatar-square {
@@ -50,9 +48,7 @@ const DeleteLogoButtonWrap = styled.div`
   transition: opacity 0.25s ease, visibility 0.25s ease;
 `;
 
-const DeleteLogoButton = styled(({ ...props }) => (
-  <IconButton {...props}>{props.children}</IconButton>
-))`
+const DeleteLogoButton = styled((props) => <IconButton {...props} />)`
   &.MuiIconButton-root {
     width: 50px;
     height: 50px;
@@ -64,11 +60,11 @@ const DeleteLogoButton = styled(({ ...props }) => (
   }
 `;
 
-interface IProps {
+interface IFormLogoProps {
   src: string;
 }
 
-const FormLogo = (props: IProps) => {
+const FormLogo = (props: IFormLogoProps) => {
   const { src } = props;
 
   const [dialogOpen, setDialogOpen] = React.useState(false);
@@ -82,16 +78,16 @@ const FormLogo = (props: IProps) => {
   };
 
   return (
-    <Wrapper logo>
-      <Logo src={src} alt="logo" variant="square" component="figure" />
+    <Wrapper>
+      <Logo src={src} alt='logo' variant='square' component='figure' />
       <DeleteLogoButtonWrap>
         <DeleteLogoButton onClick={handleDeleteLogoButtonClick}>
           <DeleteLogoIcon />
         </DeleteLogoButton>
       </DeleteLogoButtonWrap>
       <FormDialog
-        buttonText="Да"
-        dialogTitle="Вы уверены?"
+        buttonText='Да'
+        dialogTitle='Вы уверены?'
         open={dialogOpen}
         onClose={handleDialogClose}
         onSaveButtonClick={handleDialogClose}

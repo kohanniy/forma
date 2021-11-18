@@ -1,16 +1,14 @@
-import styled from "styled-components";
-import Button from "@material-ui/core/Button";
-import { SaveIcon } from "../Icons/Icons";
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
+import { SaveIcon } from '../Icons/Icons';
 
-const SubmitButton = styled(({ ...props }) => (
+const SubmitButton = styled((props) => (
   <Button
-    {...props}
-    variant="contained"
-    color="primary"
+    variant='contained'
+    color='primary'
     startIcon={<SaveIcon />}
-  >
-    {props.children}
-  </Button>
+    {...props}
+  />
 ))`
   &.MuiButton-root {
     padding: 13px 25px;
@@ -34,7 +32,7 @@ const SubmitButton = styled(({ ...props }) => (
     margin-right: 15px;
   }
 
-  & MuiButton-iconSizeMedium {
+  & .MuiButton-iconSizeMedium {
     width: 24px;
     height: 24px;
   }

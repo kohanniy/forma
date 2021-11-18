@@ -1,11 +1,11 @@
-import React from "react";
-import LogoGroup from "../Components/ControlsGroup/LogoGroup";
-import InputGroup from "../Components/ControlsGroup/InputGroup";
-import TextareaGroup from "../Components/ControlsGroup/TextareaGroup";
-import SelectGroup from "../Components/ControlsGroup/SelectGroup";
-import MultipleSelectGroup from "../Components/ControlsGroup/MultipleSelectGroup";
-import KeywordsGroup from "../Components/ControlsGroup/KeywordsGroup";
-import SocialListGroup from "../Components/ControlsGroup/SocialsListGroup";
+import React from 'react';
+import LogoGroup from '../Components/ControlsGroup/LogoGroup';
+import InputGroup from '../Components/ControlsGroup/InputGroup';
+import TextareaGroup from '../Components/ControlsGroup/TextareaGroup';
+import SelectGroup from '../Components/ControlsGroup/SelectGroup';
+import MultipleSelectGroup from '../Components/ControlsGroup/MultipleSelectGroup';
+import KeywordsGroup from '../Components/ControlsGroup/KeywordsGroup';
+import SocialListGroup from '../Components/ControlsGroup/SocialsListGroup';
 
 export interface IFormProps {
   type: string;
@@ -18,7 +18,7 @@ export interface IFormProps {
   description?: string;
   uploadBtnText?: string;
   inputType?: string;
-  socials?: Array<{ id: string, icon: React.ReactNode, socialName: string }>;
+  socials?: Array<{ id: string; icon: React.ReactNode; socialName: string }>;
 }
 
 const CustomControl: React.FC<IFormProps> = (props) => {
@@ -33,26 +33,26 @@ const CustomControl: React.FC<IFormProps> = (props) => {
     description,
     uploadBtnText,
     inputType,
-    socials
+    socials,
   } = props;
 
   const renderInput = () => {
     switch (type) {
-      case "file":
+      case 'file':
         return (
           <LogoGroup
             key={id}
             type={type}
-            description={description ? description : ""}
-            uploadBtnText={uploadBtnText ? uploadBtnText : ""}
-            accept={accept ? accept : ""}
+            description={description ? description : ''}
+            uploadBtnText={uploadBtnText ? uploadBtnText : ''}
+            accept={accept ? accept : ''}
             id={id}
             name={name}
           />
         );
-      case "text":
-      case "tel":
-      case "url":
+      case 'text':
+      case 'tel':
+      case 'url':
         return (
           <InputGroup
             key={id}
@@ -63,9 +63,9 @@ const CustomControl: React.FC<IFormProps> = (props) => {
             placeholder={placeholder}
           />
         );
-      case "textarea":
+      case 'textarea':
         return <TextareaGroup key={id} label={label} id={id} name={name} />;
-      case "select":
+      case 'select':
         return (
           <SelectGroup
             key={id}
@@ -75,7 +75,7 @@ const CustomControl: React.FC<IFormProps> = (props) => {
             options={options ? options : []}
           />
         );
-      case "multiple-select":
+      case 'multiple-select':
         return (
           <MultipleSelectGroup
             key={id}
@@ -85,17 +85,17 @@ const CustomControl: React.FC<IFormProps> = (props) => {
             name={name}
           />
         );
-      case "keywords":
+      case 'keywords':
         return (
           <KeywordsGroup
             key={id}
             id={id}
             label={label}
             name={name}
-            type={inputType ? inputType : ""}
+            type={inputType ? inputType : ''}
           />
         );
-      case "social":
+      case 'social':
         return <SocialListGroup socials={socials ? socials : []} />;
       default:
         return;

@@ -1,13 +1,11 @@
-import styled from "styled-components";
-import Button from "@material-ui/core/Button";
-import FieldsetDescription from "../Fieldset/FieldsetDescription";
-import ControlContainer from "../Controls/ControlContainer";
-import { UploadLogoIcon } from "../Icons/Icons";
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
+import FieldsetDescription from '../Fieldset/FieldsetDescription';
+import ControlContainer from '../Controls/ControlContainer';
+import { UploadLogoIcon } from '../Icons/Icons';
 
-const StyledButton = styled(({ ...props }) => (
-  <Button {...props} variant="contained" endIcon={<UploadLogoIcon />}>
-    {props.children}
-  </Button>
+const StyledButton = styled((props) => (
+  <Button variant='contained' endIcon={<UploadLogoIcon />} {...props} />
 ))`
   align-self: flex-start;
 
@@ -46,12 +44,12 @@ const UploadButton = (props: IProps) => {
 
   return (
     <ControlContainer fullWidth>
-      {description ? (
+      {description && (
         <FieldsetDescription light>{description}</FieldsetDescription>
-      ) : null}
+      )}
       <input accept={accept} id={id} multiple type={type} name={name} />
       <label htmlFor={id}>
-        <StyledButton component="span">{uploadBtnText}</StyledButton>
+        <StyledButton component='span'>{uploadBtnText}</StyledButton>
       </label>
     </ControlContainer>
   );

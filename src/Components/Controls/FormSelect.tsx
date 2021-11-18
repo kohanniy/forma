@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import Select from "@material-ui/core/Select";
+import styled from 'styled-components';
+import Select from '@material-ui/core/Select';
 
-const FormSelect = styled(({ ...props }) => (
-  <Select {...props}>{props.children}</Select>
-))`
+const FormSelect = styled((props) => <Select {...props} />)`
   &.MuiInputBase-root {
     color: #223367;
     font-size: 16px;

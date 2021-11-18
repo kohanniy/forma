@@ -1,12 +1,12 @@
-import MenuItem from "@material-ui/core/MenuItem";
-import Input from "@material-ui/core/Input";
-import ControlContainer from "../Controls/ControlContainer";
-import Label from "../Controls/Label";
-import MultipleSelect from "../Controls/MultipleSelect";
+import MenuItem from '@material-ui/core/MenuItem';
+import Input from '@material-ui/core/Input';
+import ControlContainer from '../Controls/ControlContainer';
+import Label from '../Controls/Label';
+import MultipleSelect from '../Controls/MultipleSelect';
 
 interface IProps {
   label: string;
-  id: string | number;
+  id: string;
   name: string;
   categories: Array<{ [n: string]: string }>;
 }

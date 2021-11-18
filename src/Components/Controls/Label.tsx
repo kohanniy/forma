@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import FormLabel from "@material-ui/core/FormLabel";
+import styled from 'styled-components';
+import FormLabel from '@material-ui/core/FormLabel';
 
-const Label = styled(({ ...props }) => (
-  <FormLabel {...props}>{props.children}</FormLabel>
-))`
+const Label = styled((props) => <FormLabel {...props} />)`
   &.MuiFormLabel-root {
     color: #c7c7c7;
     font-size: 16px;

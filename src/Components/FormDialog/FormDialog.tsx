@@ -1,9 +1,9 @@
-import React from "react";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
+import React from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
 
 interface IProps {
   dialogTitle: string;
@@ -15,14 +15,8 @@ interface IProps {
 }
 
 const FormDialog = (props: IProps) => {
-  const {
-    dialogTitle,
-    content,
-    open,
-    onClose,
-    onSaveButtonClick,
-    buttonText
-  } = props;
+  const { dialogTitle, content, open, onClose, onSaveButtonClick, buttonText } =
+    props;
 
   return (
     <>
@@ -30,12 +24,12 @@ const FormDialog = (props: IProps) => {
         fullWidth
         open={open}
         onClose={onClose}
-        aria-labelledby="form-dialog-title"
+        aria-labelledby='form-dialog-title'
       >
-        <DialogTitle id="form-dialog-title">{dialogTitle}</DialogTitle>
+        <DialogTitle id='form-dialog-title'>{dialogTitle}</DialogTitle>
         {content ? <DialogContent>{content}</DialogContent> : null}
         <DialogActions>
-          <Button onClick={onSaveButtonClick} color="primary">
+          <Button onClick={onSaveButtonClick} color='primary'>
             {buttonText}
           </Button>
         </DialogActions>

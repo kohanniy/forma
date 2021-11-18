@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 
-const BindSocialButton = styled(({ ...props }) => (
-  <Button {...props}>{props.children}</Button>
-))`
+const BindSocialButton = styled((props) => <Button {...props} />)`
   &.MuiButton-root {
     color: #3492ff;
     font-size: 16px;

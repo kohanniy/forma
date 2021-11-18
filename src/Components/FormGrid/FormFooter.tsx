@@ -1,10 +1,8 @@
-import Grid from "@material-ui/core/Grid";
-import styled from "styled-components";
-import SubmitButton from "../Controls/SubmitButton";
+import Grid from '@material-ui/core/Grid';
+import styled from 'styled-components';
+import SubmitButton from '../Controls/SubmitButton';
 
-const FooterContainer = styled(({ ...props }) => (
-  <Grid {...props}>{props.children}</Grid>
-))`
+const FooterContainer = styled((props) => <Grid {...props} />)`
   position: sticky;
   bottom: 0;
   padding: 23px 27px;

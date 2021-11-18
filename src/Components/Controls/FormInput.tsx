@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Input from "@material-ui/core/Input";
+import styled from 'styled-components';
+import Input from '@material-ui/core/Input';
 
-const FormInput = styled(({ ...props }) => <Input fullWidth {...props} />)`
+const FormInput = styled((props) => <Input fullWidth {...props} />)`
   &.MuiInputBase-root {
     color: #223367;
     font-size: 16px;

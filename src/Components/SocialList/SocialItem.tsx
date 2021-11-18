@@ -1,17 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import ListItem from "@material-ui/core/ListItem";
-import Avatar from "@material-ui/core/Avatar";
-import ListItemText from "@material-ui/core/ListItemText";
-import Chip from "@material-ui/core/Chip";
-import FormDialog from "../FormDialog/FormDialog";
-import BindSocialButton from "./BindSocialButton";
-import FormInput from "../Controls/FormInput";
-import { DeleteCategoryIcon } from "../Icons/Icons";
+import React from 'react';
+import styled from 'styled-components';
+import ListItem from '@material-ui/core/ListItem';
+import Avatar from '@material-ui/core/Avatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import Chip from '@material-ui/core/Chip';
+import FormDialog from '../FormDialog/FormDialog';
+import BindSocialButton from './BindSocialButton';
+import FormInput from '../Controls/FormInput';
+import { DeleteCategoryIcon } from '../Icons/Icons';
 
-const StyledItem = styled(({ ...props }) => (
-  <ListItem {...props}>{props.children}</ListItem>
-))`
+const StyledItem = styled((props) => <ListItem {...props} />)`
   &.MuiListItem-root {
     padding-top: 0;
     padding-bottom: 0;
@@ -22,9 +20,7 @@ const StyledItem = styled(({ ...props }) => (
   }
 `;
 
-const StyledAvatar = styled(({ ...props }) => (
-  <Avatar {...props}>{props.children}</Avatar>
-))`
+const StyledAvatar = styled((props) => <Avatar {...props} />)`
   &.MuiAvatar-root {
     width: 41px;
     height: 41px;
@@ -37,9 +33,7 @@ const StyledAvatar = styled(({ ...props }) => (
   }
 `;
 
-const StyledListItemText = styled(({ ...props }) => (
-  <ListItemText {...props}>{props.children}</ListItemText>
-))`
+const StyledListItemText = styled((props) => <ListItemText {...props} />)`
   &.MuiListItemText-root {
     margin-top: 0;
     margin-bottom: 0;
@@ -51,7 +45,7 @@ const StyledListItemText = styled(({ ...props }) => (
 
   & > .MuiTypography-body1 {
     font-size: 16px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0;
@@ -59,7 +53,7 @@ const StyledListItemText = styled(({ ...props }) => (
   }
 `;
 
-const StyledChip = styled(({ ...props }) => <Chip {...props} />)`
+const StyledChip = styled((props) => <Chip {...props} />)`
   &.MuiChip-root {
     color: #223367;
     padding: 5px;
@@ -105,8 +99,8 @@ const SocialItem = (props: IProps) => {
   const { id, icon, socialName } = props;
 
   const [dialogOpen, setDialogOpen] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState("");
-  const [chipContent, setChipContent] = React.useState("");
+  const [inputValue, setInputValue] = React.useState('');
+  const [chipContent, setChipContent] = React.useState('');
 
   const handleBindSocialButtonClick = () => {
     setDialogOpen(true);
@@ -127,7 +121,7 @@ const SocialItem = (props: IProps) => {
 
   const handleSave = () => {
     setChipContent(inputValue);
-    setInputValue("");
+    setInputValue('');
     setDialogOpen(false);
   };
 
@@ -135,7 +129,7 @@ const SocialItem = (props: IProps) => {
     <StyledItem key={id} disableGutters>
       <StyledAvatar>{icon}</StyledAvatar>
       <StyledListItemText id={id} primary={socialName} />
-      {chipContent !== "" ? (
+      {chipContent !== '' ? (
         <StyledChip
           label={chipContent}
           clickable
@@ -148,14 +142,14 @@ const SocialItem = (props: IProps) => {
         </BindSocialButton>
       )}
       <FormDialog
-        buttonText="Связать"
-        dialogTitle="Укажите ссылку"
+        buttonText='Связать'
+        dialogTitle='Укажите ссылку'
         open={dialogOpen}
         content={
           <FormInput
             autoFocus
             id={`company${id}Link`}
-            type="url"
+            type='url'
             name={`${id}-link`}
             onChange={handleChange}
             value={inputValue}

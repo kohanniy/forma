@@ -1,7 +1,7 @@
-import React from "react";
-import ControlContainer from "../Controls/ControlContainer";
-import Label from "../Controls/Label";
-import Textarea from "../Controls/Textarea";
+import React from 'react';
+import ControlContainer from '../Controls/ControlContainer';
+import Label from '../Controls/Label';
+import Textarea from '../Controls/Textarea';
 
 interface IProps {
   name: string;

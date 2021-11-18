@@ -1,12 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Select from "@material-ui/core/Select";
-import Chip from "@material-ui/core/Chip";
-import { DeleteCategoryIcon } from "../Icons/Icons";
+import React from 'react';
+import styled from 'styled-components';
+import Select, { SelectProps } from '@material-ui/core/Select';
+import Chip from '@material-ui/core/Chip';
+import { DeleteCategoryIcon } from '../Icons/Icons';
 
-const StyledSelect = styled(({ ...props }) => (
-  <Select {...props}>{props.children}</Select>
-))`
+const StyledSelect = styled((props) => <Select {...props} />)`
   &.MuiInputBase-root {
     color: #223367;
     font-size: 16px;
@@ -48,9 +46,7 @@ const StyledSelect = styled(({ ...props }) => (
   }
 `;
 
-const StyledChip = styled(({ ...props }) => (
-  <Chip {...props}>{props.children}</Chip>
-))`
+const StyledChip = styled((props) => <Chip {...props} />)`
   &.MuiChip-root {
     color: #223367;
     height: auto;
@@ -86,9 +82,7 @@ const StyledChip = styled(({ ...props }) => (
   }
 `;
 
-const MultipleSelect = (props: any) => {
-  const { children } = props;
-
+const MultipleSelect = (props: SelectProps) => {
   const [category, setCategory] = React.useState<string[]>([]);
 
   const ITEM_HEIGHT = 48;
@@ -98,9 +92,9 @@ const MultipleSelect = (props: any) => {
     PaperProps: {
       style: {
         maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250
-      }
-    }
+        width: 250,
+      },
+    },
   };
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
@@ -124,9 +118,8 @@ const MultipleSelect = (props: any) => {
           ))}
         </div>
       )}
-    >
-      {children}
-    </StyledSelect>
+      {...props}
+    />
   );
 };
 

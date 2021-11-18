@@ -1,6 +1,6 @@
-import ControlContainer from "../Controls/ControlContainer";
-import Label from "../Controls/Label";
-import FormInput from "../Controls/FormInput";
+import ControlContainer from '../Controls/ControlContainer';
+import Label from '../Controls/Label';
+import FormInput from '../Controls/FormInput';
 
 interface IProps {
   type: string;

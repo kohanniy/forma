@@ -1,17 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import Container from "@material-ui/core/Container";
-import IconButton from "@material-ui/core/IconButton";
-import Chip from "@material-ui/core/Chip";
-import ControlContainer from "../Controls/ControlContainer";
-import Label from "../Controls/Label";
-import FormInput from "../Controls/FormInput";
-import { ArrowRightIcon, DeleteCategoryIcon } from "../Icons/Icons";
+import React from 'react';
+import styled from 'styled-components';
+import Container from '@material-ui/core/Container';
+import IconButton from '@material-ui/core/IconButton';
+import Chip from '@material-ui/core/Chip';
+import ControlContainer from '../Controls/ControlContainer';
+import Label from '../Controls/Label';
+import FormInput from '../Controls/FormInput';
+import { ArrowRightIcon, DeleteCategoryIcon } from '../Icons/Icons';
 
-const InputWithBtnWrapper = styled(({ ...props }) => (
-  <Container disableGutters {...props}>
-    {props.children}
-  </Container>
+const InputWithBtnWrapper = styled((props) => (
+  <Container disableGutters {...props} />
 ))`
   &.MuiContainer-root {
     display: flex;
@@ -23,9 +21,7 @@ const InputWithBtnWrapper = styled(({ ...props }) => (
   }
 `;
 
-const SubmitButton = styled(({ ...props }) => (
-  <IconButton {...props}>{props.children}</IconButton>
-))`
+const SubmitButton = styled((props) => <IconButton {...props} />)`
   &.MuiIconButton-root {
     box-sizing: border-box;
     position: absolute;
@@ -52,17 +48,15 @@ const SubmitButton = styled(({ ...props }) => (
   }
 `;
 
-const KeywordsWrapper = styled(({ ...props }) => (
-  <Container disableGutters {...props}>
-    {props.children}
-  </Container>
+const KeywordsWrapper = styled((props) => (
+  <Container disableGutters {...props} />
 ))`
   &.MuiContainer-root {
     margin-top: 10px;
   }
 `;
 
-const Keywords = styled(({ ...props }) => <Chip {...props} />)`
+const Keywords = styled((props) => <Chip {...props} />)`
   &.MuiChip-root {
     color: #223367;
     height: 34px;
@@ -108,14 +102,14 @@ interface IProps {
 const KeywordsGroup = (props: IProps) => {
   const { id, label, name, type } = props;
 
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
   const [isDisabled, setIsDisabled] = React.useState(true);
   const [keywords, setKeywords] = React.useState<
     Array<{ id: string; value: string }>
   >([]);
 
   React.useEffect(() => {
-    if (value === "") {
+    if (value === '') {
       setIsDisabled(true);
     } else {
       setIsDisabled(false);
@@ -130,7 +124,7 @@ const KeywordsGroup = (props: IProps) => {
     const keywordId = `f${(~~(Math.random() * 1e8)).toString(16)}`;
     const newKeyword = value;
     setKeywords([...keywords, { id: keywordId, value: newKeyword }]);
-    setValue("");
+    setValue('');
   };
 
   const handleDelete = (evt: any) => {
@@ -162,7 +156,7 @@ const KeywordsGroup = (props: IProps) => {
             <Keywords
               data-id={keyword.id}
               clickable
-              variant="outlined"
+              variant='outlined'
               key={keyword.id}
               label={keyword.value}
               icon={<DeleteCategoryIcon />}

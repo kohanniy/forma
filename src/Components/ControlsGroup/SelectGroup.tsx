@@ -1,8 +1,8 @@
-import MenuItem from "@material-ui/core/MenuItem";
-import Input from "@material-ui/core/Input";
-import ControlContainer from "../Controls/ControlContainer";
-import Label from "../Controls/Label";
-import FormSelect from "../Controls/FormSelect";
+import MenuItem from '@material-ui/core/MenuItem';
+import Input from '@material-ui/core/Input';
+import ControlContainer from '../Controls/ControlContainer';
+import Label from '../Controls/Label';
+import FormSelect from '../Controls/FormSelect';
 
 interface IProps {
   label: string;
